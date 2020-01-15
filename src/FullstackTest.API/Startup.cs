@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using AutoMapper;
 
 namespace FullstackTest.API
 {
@@ -27,6 +28,9 @@ namespace FullstackTest.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddServices(Configuration);
+            services.AddJwtAuthentication();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
             services.AddControllers();
         }
 

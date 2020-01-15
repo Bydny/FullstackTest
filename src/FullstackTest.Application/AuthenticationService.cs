@@ -22,6 +22,16 @@ namespace FullstackTest.Application
 
         public async Task<string> GenerateTokenAsync(string email, string password)
         {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                throw new ArgumentException("Email is required");
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                throw new ArgumentException("Password is required");
+            }
+
             var user = await userService.AuthenticateUserAsync(email, password);
 
             var claims = new[]
