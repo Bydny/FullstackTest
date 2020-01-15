@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullstackTest.API", "FullstackTest.API\FullstackTest.API.csproj", "{43C3D7E8-98DB-478D-8686-143CC4E19FC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullstackTest.API", "FullstackTest.API\FullstackTest.API.csproj", "{43C3D7E8-98DB-478D-8686-143CC4E19FC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullstackTest.Domain", "FullstackTest.Domain\FullstackTest.Domain.csproj", "{5A21FFA6-9357-4977-873F-2F770087CE7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FullstackTest.Domain", "FullstackTest.Domain\FullstackTest.Domain.csproj", "{5A21FFA6-9357-4977-873F-2F770087CE7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullstackTest.Persistence", "FullstackTest.Persistence\FullstackTest.Persistence.csproj", "{C6A067CC-DBFF-44CD-9EAC-A5D42CD576E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5A21FFA6-9357-4977-873F-2F770087CE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A21FFA6-9357-4977-873F-2F770087CE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A21FFA6-9357-4977-873F-2F770087CE7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A067CC-DBFF-44CD-9EAC-A5D42CD576E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A067CC-DBFF-44CD-9EAC-A5D42CD576E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A067CC-DBFF-44CD-9EAC-A5D42CD576E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A067CC-DBFF-44CD-9EAC-A5D42CD576E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
