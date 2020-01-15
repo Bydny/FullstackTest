@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FullstackTest.Application\FullstackTest.Application.csproj" />
     <ProjectReference Include="..\FullstackTest.Persistence\FullstackTest.Persistence.csproj" />
   </ItemGroup>
 

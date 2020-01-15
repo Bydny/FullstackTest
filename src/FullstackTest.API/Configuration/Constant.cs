@@ -2,6 +2,7 @@
 {
     public class Constant
     {
-        public const string ApplicationDbContextConnectionString = "ApplicationDbContextConnection";
+        public const string ConfigSectionApplicationDbContextConnectionString = "ApplicationDbContextConnection";
+        public const string ConfigSectionTokenManagement = "TokenManagement";
     }
 }
