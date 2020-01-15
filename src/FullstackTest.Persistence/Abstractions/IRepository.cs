@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using FullstackTest.Domain;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace FullstackTest.Persistence.Abstractions
 {
-    public interface IRepository<T, K> where T : class
+    public interface IRepository<T, K> 
+        where T : class, IIdentity<K>
     {
         Task<IEnumerable<T>> GetAllAsync();
         Task<T> GetByIdAsync(K id);
