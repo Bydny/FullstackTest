@@ -20,6 +20,11 @@ namespace FullstackTest.API.Controllers
             this.authenticationService = authenticationService;
         }
 
+        /// <summary>
+        /// Returns authorization bearer token.
+        /// </summary>
+        /// <param name="model">User's credentials.</param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Authenticate([FromBody] AuthUserModel model)
         {

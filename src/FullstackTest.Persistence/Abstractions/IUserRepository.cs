@@ -6,6 +6,6 @@ namespace FullstackTest.Persistence.Abstractions
 {
     public interface IUserRepository : IRepository<User, Guid>
     {
-        public Task<User> GetByEmailAsync(string email);
+        Task<User> GetByEmailAsync(string email);
     }
 }

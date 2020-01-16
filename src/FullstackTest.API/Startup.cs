@@ -1,22 +1,18 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using FullstackTest.API.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using AutoMapper;
+using System;
 
 namespace FullstackTest.API
 {
     public class Startup
     {
+        private const string CorsPolicyName = "fullstackTest_Policy";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -30,6 +26,17 @@ namespace FullstackTest.API
             services.AddServices(Configuration);
             services.AddJwtAuthentication();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddSwagger();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(CorsPolicyName, policy =>
+                {
+                    policy.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
 
             services.AddControllers();
         }
@@ -46,11 +53,18 @@ namespace FullstackTest.API
 
             app.UseRouting();
 
+            app
+                .UseSwagger()
+                .UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Dialog management API v1"));
+
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors(CorsPolicyName);
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                 endpoints.MapControllers();
             });
         }
     }

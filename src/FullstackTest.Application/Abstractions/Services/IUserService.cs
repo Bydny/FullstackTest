@@ -6,7 +6,7 @@ namespace FullstackTest.Application.Abstractions.Services
 {
     public interface IUserService
     {
-        public Task<UserDto> AuthenticateUserAsync(string email, string password);
-        public Task<bool> CheckIfEmailExistsAsync(string email);
+        Task<UserDto> AuthenticateUserAsync(string email, string password);
+        Task<bool> CheckIfEmailExistsAsync(string email);
     }
 }
